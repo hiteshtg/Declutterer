@@ -2,7 +2,6 @@
 #+AUTHOR: Hitesh
 #+OPTIONS: toc:nil
 
-* Declutterer 🧹
 A simple Python CLI tool to organize and declutter your files based on file extensions.
 
 * ✨ Features
