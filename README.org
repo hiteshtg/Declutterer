@@ -1,0 +1,76 @@
+#+TITLE: Declutterer 🧹
+#+AUTHOR: Hitesh
+#+OPTIONS: toc:nil
+
+* Declutterer 🧹
+A simple Python CLI tool to organize and declutter your files based on file extensions.
+
+* ✨ Features
+- Automatically organizes files into folders like ~Images~, ~Videos~, ~Documents~, etc.
+- Easy to use from the command line.
+- Supports custom directory paths.
+- Fast and lightweight.
+
+* 📦 Requirements
+- Python 3.8+
+
+* 🚀 Usage
+#+begin_src bash
+# Navigate to the project directory
+cd Declutterer
+
+# Run the script (adjust path if needed)
+python main.py /path/to/your/folder
+#+end_src
+
+** Example
+#+begin_src bash
+python main.py ~/Downloads
+#+end_src
+
+All files in ~/Downloads will be sorted into folders like:
+- ~Images/~
+- ~Videos/~
+- ~Documents/~
+- ~Archives/~
+- ~Others/~
+
+* 🛠️ Project Structure
+#+begin_src text
+Declutterer/
+├── main.py        # Main script to run decluttering
+├── helper.py      # Contains utility functions
+└── README.org     # Project documentation
+#+end_src
+
+* 📁 How It Works
+1. Lists all files in the given directory.
+2. Matches file extensions against predefined categories.
+3. Moves files into corresponding folders (creates them if not present).
+
+* 🧪 Sample Output
+
+** Before
+#+begin_src text
+Downloads/
+├── img1.png
+├── resume.pdf
+├── video.mp4
+#+end_src
+
+** After
+#+begin_src text
+Downloads/
+├── Images/
+│   └── img1.png
+├── Documents/
+│   └── resume.pdf
+├── Videos/
+│   └── video.mp4
+#+end_src
+
+* 🤝 Contributing
+Contributions are welcome! Feel free to open issues or submit pull requests.
+
+* 📄 License
+MIT License © 2025 [[https://github.com/hiteshtg][Hitesh]]
