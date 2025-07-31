@@ -13,12 +13,14 @@ def check_directory(path :str):
 
 @app.command()
 def declutter(path :str):
-    files = os.listdir(path)
-    for file in files:
-        for category, ext in helper.ext_dict.items():
-            for extention in ext:
-                if file.endswith(extention):
-                    shutil.move(os.path.join(path, file), os.path.join(path, category))
+    for dir_path, dire, files in os.walk(path, topdown=False):
+        for file in files:
+            for category, ext in helper.ext_dict.items():
+                for extention in ext:
+                    if file.endswith(extention):
+                        if not os.path.isdir(os.path.join(dir_path, category)):
+                            os.mkdir(os.path.join(dire, category))
+                        move(os.path.join(dir_path, file), os.path.join(path, category, file))
     print(f"Files Decluttered")
                 
 if __name__ == "__main__":
