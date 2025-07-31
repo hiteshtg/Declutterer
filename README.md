@@ -47,10 +47,10 @@ ext_dict = {
 
 ### 4. Run the script
 
-Set the `path` variable inside `main.py` to your target directory and run:
+Set the `path` variable inside `main.py` to your target directory and run or add path:
 
 ```bash
-python3 main.py
+python3 main.py path
 ```
 
 ---
