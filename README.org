@@ -1,75 +1,80 @@
-#+TITLE: Declutterer 🧹
+#+TITLE: Declutterer
 #+AUTHOR: Hitesh
 #+OPTIONS: toc:nil
 
-A simple Python CLI tool to organize and declutter your files based on file extensions.
+* 📂 Declutterer - File Organizer Tool
 
-* ✨ Features
-- Automatically organizes files into folders like ~Images~, ~Videos~, ~Documents~, etc.
-- Easy to use from the command line.
-- Supports custom directory paths.
-- Fast and lightweight.
+Declutterer is a simple yet effective Python-based file organizer. It helps you clean up a given directory by moving files into categorized subfolders based on file extensions.
 
-* 📦 Requirements
-- Python 3.8+
+This is ideal for cleaning up cluttered directories like `~/Downloads`, `~/.config`, or any directory with mixed file types.
 
-* 🚀 Usage
-#+begin_src bash
-# Navigate to the project directory
+* ✅ Features
+
+- Recursively organize files in a directory and its subdirectories
+- Automatically categorizes files by extension (customizable)
+- Simple command-line script
+- Prevents creating duplicate folders if they already exist
+
+* 🚀 Getting Started
+
+**1. Clone the repository**
+#+begin_src sh
+git clone https://github.com/hiteshtg/Declutterer.git
 cd Declutterer
-
-# Run the script (adjust path if needed)
-python main.py /path/to/your/folder
 #+end_src
 
-** Example
-#+begin_src bash
-python main.py ~/Downloads
+**2. Make sure you have Python installed**
+Test with:
+#+begin_src sh
+python3 --version
 #+end_src
 
-All files in ~/Downloads will be sorted into folders like:
-- ~Images/~
-- ~Videos/~
-- ~Documents/~
-- ~Archives/~
-- ~Others/~
+**3. Create or edit your extension mapping**
+The file categorization is based on =helper.py=, which contains an extension dictionary like:
 
-* 🛠️ Project Structure
-#+begin_src text
-Declutterer/
-├── main.py        # Main script to run decluttering
-├── helper.py      # Contains utility functions
-└── README.org     # Project documentation
+#+begin_src python
+ext_dict = {
+    "Documents": [".pdf", ".docx", ".txt"],
+    "Images": [".jpg", ".png", ".gif"],
+    "Videos": [".mp4", ".mkv"],
+    "Archives": [".zip", ".tar.gz", ".rar"],
+    ;; Add more categories and extensions as needed
+}
 #+end_src
 
-* 📁 How It Works
-1. Lists all files in the given directory.
-2. Matches file extensions against predefined categories.
-3. Moves files into corresponding folders (creates them if not present).
-
-* 🧪 Sample Output
-
-** Before
-#+begin_src text
-Downloads/
-├── img1.png
-├── resume.pdf
-├── video.mp4
+**4. Run the script**
+Edit the =path= variable in =main.py= with the target directory and then run:
+#+begin_src sh
+python3 main.py
 #+end_src
 
-** After
-#+begin_src text
-Downloads/
-├── Images/
-│   └── img1.png
+* 🔧 Planned Features
+
+- [ ] Add support for ~--dry-run~ to preview actions without making changes
+- [ ] Add ~--verbose~ mode to print details of each move
+- [ ] Add command-line arguments to dynamically set the path
+
+* 💡 Example
+
+If you set =path="/home/hitesh/.config/"= and run the script, files will be organized into folders like:
+
+#+begin_example
+/home/hitesh/.config/
 ├── Documents/
-│   └── resume.pdf
-├── Videos/
-│   └── video.mp4
-#+end_src
+│   └── notes.txt
+├── Images/
+│   └── wallpaper.png
+└── ...
+#+end_example
 
-* 🤝 Contributing
-Contributions are welcome! Feel free to open issues or submit pull requests.
+* 🧠 Contribution
+
+If you'd like to improve this project (e.g., by adding dry-run or verbose options), feel free to fork the repo and open a pull request!
 
 * 📄 License
-MIT License © 2025 [[https://github.com/hiteshtg][Hitesh]]
+
+MIT License
+
+---
+
+Made with ❤️ by Hitesh
