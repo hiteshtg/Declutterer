@@ -57,10 +57,10 @@ python3 main.py path
 
 ## 💡 Example
 
-If you set `path="/home/hitesh/.config/"` and run the script, files will be organized into folders like this:
+If you set `path="/home/hitesh/"` and run the script, files will be organized into folders like this:
 
 ```
-/home/hitesh/.config/
+/home/hitesh/
 ├── Documents/
 │   └── notes.txt
 ├── Images/
